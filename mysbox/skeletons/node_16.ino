@@ -28,6 +28,11 @@
 #define MY_RADIO_NRF24
 {% endif %}
 
+{% if not no_repeater %}
+// Enabled repeater feature for this node
+#define MY_REPEATER_FEATURE
+{% endif %}
+
 #include <SPI.h>
 #include <MySensor.h>
 
