@@ -21,7 +21,7 @@ CLASSIFIERS = [
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-setup(name='pymys',
+setup(name='mysbox',
       version=__version__,
       description="It is a module to make easier communication with MySensor\'s network.",
       author='Alfredo Miranda',
