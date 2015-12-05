@@ -65,3 +65,13 @@ Listing all available boards
 Compiling a simple node to Arduino Uno
 
     $ mysbox compile -b uno node/build_mys/node.ino.hex /dev/ttyUSB0
+
+## Support
+
+It was only tested on Linux envrionment. However, it should work on Windows and OS X systems.
+Operating System:
+- Linux
+
+It was only tested with Python 3.4, but it should work with any Python 3.x.
+Python Version:
+- 3.4
