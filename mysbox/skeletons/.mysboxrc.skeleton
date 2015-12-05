@@ -1,0 +1,10 @@
+#You must look into this file and change the directories and uncomment the lines
+[compiler]
+# arduino_builder=<Arduino Path>/arduino-builder
+# arduino_hadware=<Arduino Path>/hardware
+# arduino_tools=<Arduino Path>/hardware/tools/avr
+# tools_builder=<Arduino Path>/tools-builder
+# ide_version=10606
+# IDE VERSION 10606 == 1.6.6 (This line is just to explain, you may remove it)
+# builtin_libs=<Arduino Path>/libraries
+# libs=~/Arduino/libraries,<Another Arduino Library Path>
