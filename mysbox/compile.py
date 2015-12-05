@@ -5,8 +5,13 @@ from io import StringIO
 
 build_dir = 'build_mys'
 
-fqbn = {'uno': ['arduino:avr:uno', 'Arduino Uno'],
-        'duemilanove': ['arduino:avr:diecimila:cpu=atmega328', 'Arduino Diecimila or Duemilanove with Atmega328']
+fqbn = {'uno': {'fqbn': 'arduino:avr:uno', 'label': 'Arduino/Genuino Uno'},
+        'diecimila328': {'fqbn': 'arduino:avr:diecimila:cpu=atmega328', 'label': 'Arduino Diecimila or Duemilanove with Atmega328'},
+        'diecimila168': {'fqbn': 'arduino:avr:diecimila:cpu=atmega168', 'label': 'Arduino Diecimila or Duemilanove with Atmega168'},
+        'nano328': {'fqbn': 'arduino:avr:nano:cpu=atmega328', 'label': 'Arduino Nano with ATmega328'},
+        'nano168': {'fqbn': 'arduino:avr:nano:cpu=atmega168', 'label': 'Arduino Nano with ATmega168'},
+        'mega2560': {'fqbn': 'arduino:avr:mega:cpu=atmega2560', 'label': 'Arduino/Genuino Mega with ATmega2560'},
+        'mega1280': {'fqbn': 'arduino:avr:mega:cpu=atmega1280', 'label': 'Arduino/Genuino Mega with ATmega1280'},
         }
 
 
@@ -27,13 +32,13 @@ def list_fqbn():
     print("List of available boards:\n")
     print("".join(word.ljust(col_width) for word in ['Argument', 'Name']))
     for row in sorted(fqbn):
-        print("".join(word.ljust(col_width) for word in [row, fqbn[row][-1]]))
+        print("".join(word.ljust(col_width) for word in [row, fqbn[row]['label']]))
 
     exit(0)
 
 
 def _create_compiler_line(args, settings, build_path):
-    board_str = fqbn[args.board][0]
+    board_str = fqbn[args.board]['fqbn']
     libs = csv.reader(StringIO(settings['compiler']['libs']), delimiter=',')
 
     libs_str = ''
