@@ -1,8 +1,17 @@
 import os
 import argparse
 
+from mysbox import compile
 from mysbox import create
 from mysbox import config
+
+
+class ListBoardsAction(argparse.Action):
+    def __init__(self, option_strings=None, **kwargs):
+        super(ListBoardsAction, self).__init__(option_strings, **kwargs)
+
+    def __call__(self, parser, namespace, values, option_string=None):
+        compile.list_fqbn()
 
 
 def arguments():
@@ -33,6 +42,12 @@ def arguments():
 
     connect_parser = subparsers.add_parser('connect')
 
+    compile_parser = subparsers.add_parser('compile')
+    compile_parser.set_defaults(func=compile.compile_mys)
+    compile_parser.add_argument('sketch', help="Sketch file to be compiled")
+    compile_parser.add_argument('-l', '--list', help="List all available boards", action=ListBoardsAction, nargs=0)
+    compile_parser.add_argument('-b', '--board', help="Target to be compiled", type=str.lower)
+
     args = parser.parse_args()
 
     return args
@@ -40,6 +55,5 @@ def arguments():
 
 def main():
     settings = config.load_config()
-    # print(type(settings['default']['arduino_path']))
     args = arguments()
-    args.func(args)
+    args.func(args, settings)

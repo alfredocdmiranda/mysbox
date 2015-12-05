@@ -5,7 +5,7 @@ import jinja2
 protocols = ['1.6']
 
 
-def create_gw(args):
+def create_gw(args, settings):
     filename = "gw_{}_{}.ino".format(args.type, protocols[-1].replace('.', ''))
     skel_dir = _get_skeleton_dir()
     with open(os.path.join(skel_dir, filename)) as f:
@@ -17,7 +17,7 @@ def create_gw(args):
         f.write(file_out)
 
 
-def create_node(args):
+def create_node(args, settings):
     filename = "node_{}.ino".format(protocols[-1].replace('.', ''))
     skel_dir = _get_skeleton_dir()
     with open(os.path.join(skel_dir, filename)) as f:
