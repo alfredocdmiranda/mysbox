@@ -31,7 +31,7 @@ setup(name='pymys',
       long_description=read('DESCRIPTION.rst'),
       classifiers=CLASSIFIERS,
       packages=['mysbox'],
-      package_data={'mysbox': ['skeletons/*']},
+      package_data={'mysbox': ['skeletons/*', 'skeletons/.*']},
       install_requires=['pyserial>=2.7',
                         'jinja2>=2.8'],
       entry_points={'console_scripts': ['mysbox = mysbox:main']})
