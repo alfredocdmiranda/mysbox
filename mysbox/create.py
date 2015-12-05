@@ -22,7 +22,7 @@ def create_gw(args, settings):
 def create_node(args, settings):
     sketch_name = "node_{}.ino".format(protocols[-1].replace('.', ''))
     skel_dir = _get_skeleton_dir()
-    sketch_dir = _verify_dir(args.output.replace(".ino", ""))
+    sketch_dir = _verify_dir(args.output)
 
     with open(os.path.join(skel_dir, sketch_name)) as f:
         file_in = f.read()
