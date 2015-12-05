@@ -27,7 +27,7 @@ def list_fqbn():
     print("List of available boards:\n")
     print("".join(word.ljust(col_width) for word in ['Argument', 'Name']))
     for row in sorted(fqbn):
-        print("".join(word.ljust(col_width) for word in [row, fqbn[row][1]]))
+        print("".join(word.ljust(col_width) for word in [row, fqbn[row][-1]]))
 
     exit(0)
 
