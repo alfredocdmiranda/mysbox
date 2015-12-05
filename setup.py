@@ -4,8 +4,9 @@ import os
 __version__ = '0.1'
 
 CLASSIFIERS = [
-    "Development Status :: 1 - Planning",
+    "Development Status :: 3 - Alpha",
     "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
     "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
     "Operating System :: POSIX :: Linux",
     "Programming Language :: Python",
@@ -22,7 +23,7 @@ def read(fname):
 
 setup(name='pymys',
       version=__version__,
-      description='It is a module to make easier communication with MySensor\'s network.',
+      description="It is a module to make easier communication with MySensor\'s network.",
       author='Alfredo Miranda',
       author_email='alfredocdmiranda@gmail.com',
       url='https://github.com/alfredocdmiranda/mysbox',
