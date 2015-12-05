@@ -1,4 +1,4 @@
-from setuptools import setup, Extension
+from setuptools import setup
 import os
 
 __version__ = '0.1'
