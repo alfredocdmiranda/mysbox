@@ -15,7 +15,7 @@ def create_gw(args, settings):
 
     template = jinja2.Template(file_in)
     file_out = template.render(vars(args))
-    with open(os.path.join(sketch_dir, args.output), 'w') as f:
+    with open(os.path.join(sketch_dir, args.output+'.ino'), 'w') as f:
         f.write(file_out)
 
 
@@ -30,7 +30,7 @@ def create_node(args, settings):
     temp = jinja2.Template(file_in)
     file_out = temp.render(vars(args))
 
-    with open(os.path.join(sketch_dir, args.output), 'w') as f:
+    with open(os.path.join(sketch_dir, args.output+'.ino'), 'w') as f:
         f.write(file_out)
 
 
