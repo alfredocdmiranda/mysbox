@@ -23,7 +23,7 @@ def read(fname):
 
 setup(name='mysbox',
       version=__version__,
-      description="It is a module to make easier communication with MySensor\'s network.",
+      description="It is a set of tools to make easier work with MySensors.",
       author='Alfredo Miranda',
       author_email='alfredocdmiranda@gmail.com',
       url='https://github.com/alfredocdmiranda/mysbox',
@@ -34,5 +34,6 @@ setup(name='mysbox',
       packages=['mysbox'],
       package_data={'mysbox': ['skeletons/*', 'skeletons/.*']},
       install_requires=['pyserial>=2.7',
-                        'jinja2>=2.8'],
+                        'jinja2>=2.8',
+                        'pymys'],
       entry_points={'console_scripts': ['mysbox = mysbox:main']})

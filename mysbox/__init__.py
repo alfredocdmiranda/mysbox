@@ -2,8 +2,9 @@ import os
 import argparse
 
 from mysbox import compile
-from mysbox import create
+from mysbox import connect
 from mysbox import config
+from mysbox import create
 from mysbox import upload
 
 
@@ -49,7 +50,9 @@ def arguments():
     create_gw_parser.add_argument('-n', '--name', help="Sketch name", default=None, type=str)
     create_gw_parser.add_argument('-v', '--version', help="Sketch version", default=None, type=str)
 
-    # connect_parser = subparsers.add_parser('connect')
+    connect_parser = subparsers.add_parser('connect')
+    connect_parser.set_defaults(func=connect.connect_gw)
+    connect_parser.add_argument('port', help="Serial port")
 
     compile_parser = subparsers.add_parser('compile')
     compile_parser.set_defaults(func=compile.compile_mys)
