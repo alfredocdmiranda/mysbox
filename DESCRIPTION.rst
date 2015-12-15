@@ -87,6 +87,13 @@ Python Version:
 What's news
 -----------
 
+- Support to connect to your Serial Gateway and control your network over CLI
+- Improved reliability
+- Fixed some bugs
+
+What's news 0.1
+---------------
+
 - Support to create node and modify some arguments
 - Support to create serial
 - Support to compile sketch using arduino ide tools

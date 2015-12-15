@@ -66,6 +66,30 @@ Compiling a simple node to Arduino Uno
 
     $ mysbox compile -b uno node/build_mys/node.ino.hex /dev/ttyUSB0
 
+### Connecting
+
+You can connect to your Serial Gateway and control your network sending commands, listing nodes and much more options.
+
+Listing all nodes attached to the gateway
+
+    [mysbox] > list nodes
+
+Listing all commands available
+
+    [mysbox] > help
+
+Rebooting a node
+
+    [mysbox] > reboot 1
+
+Rebooting all nodes
+
+    [mysbox] > reboot all
+
+Sending a raw message
+
+    [mysbox] > send 0;0;3;0;13;
+
 ## Support
 
 It was only tested on Linux envrionment. However, it should work on Windows and OS X systems.
