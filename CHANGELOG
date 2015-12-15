@@ -1,0 +1,11 @@
+# Change Log
+All notable changes to this project will be documented in this file.
+
+## [Unreleased] - [Unreleased]
+### Added
+- Function to connect to your gatewat, so you can control your network
+- Reboot node command
+- Show messages command
+- List nodes and sensors command
+- Exit command
+- Improved reliability
